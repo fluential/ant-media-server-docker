@@ -15,8 +15,6 @@ ARG MongoDBServer=
 ARG MongoDBUsername=
 ARG MongoDBPassword=
 
-ADD run.sh /tmp/run.sh
-RUN chmod 755 /tmp/run.sh
 #Running update and install makes the builder not to use cache which resolves some updates
 RUN apt-get update && apt-get install -y curl libcap2 jq net-tools openjdk-8-jdk
 
