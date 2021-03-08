@@ -1,0 +1,35 @@
+version : '3.4'
+
+services :
+  traefik:
+    network_mode: host
+    image: "traefik:v2.4"
+    container_name: "traefik"
+    command:
+      #- "--log.level=DEBUG"
+      - "--api.insecure=true"
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--entrypoints.websecure.address=:443"
+      - "--certificatesresolvers.myresolver.acme.tlschallenge=true"
+      - "--certificatesresolvers.myresolver.acme.caserver=https://acme-staging-v02.api.letsencrypt.org/directory"
+      - "--certificatesresolvers.myresolver.acme.email=foo@mail"
+      - "--certificatesresolvers.myresolver.acme.storage=/letsencrypt/acme.json"
+    volumes:
+      - "./letsencrypt:/letsencrypt"
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+  antmediaserver :
+    network_mode: host
+    container_name : antmediaserver
+    image : "fluential/antmediaserver:${ANTMEDIA_VERSION:-latest}"
+    volumes :
+      - datastore:/usr/local/antmedia
+    restart : always
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.antmediaserver.rule=Host(`foo.bar`)"
+      - "traefik.http.routers.antmediaserver.entrypoints=websecure"
+      - "traefik.http.routers.antmediaserver.tls.certresolver=myresolver"
+      - "traefik.http.services.my-service.loadbalancer.server.port=5080"
+volumes :
+  datastore : {}
