@@ -1,3 +1,15 @@
+# This docker file can be used in kubernetes. 
+# It accepts all cluster related parameters at run time. 
+# It means it's very easy to add new containers to the cluster 
+
+#  Ant Media Server Default Ports
+#
+#    TCP:1935 (RTMP)
+#    TCP:5080 (HTTP)
+#    TCP:5443 (HTTPS)
+#    TCP:5554 (RTSP)
+#    UDP:5000-65000 (WebRTC and RTSP)
+
 FROM ubuntu:18.04
 
 # Keep this value ARGs for compatibility
@@ -40,5 +52,4 @@ ENTRYPOINT service antmedia restart && bash
 # -u: MongoDB username
 #
 # -p: MongoDB password
-
-ENTRYPOINT ["/usr/local/antmedia/start.sh"]
+ENTRYPOINT ["/sbin/start-stop-daemon", "--start", "--chuid" ,"antmedia:antmedia", "--exec", "/usr/local/antmedia/start.sh"]
