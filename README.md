@@ -20,7 +20,7 @@ Container with built-in data volume
 
 ```
 docker create --name antmediadata
-docker run --volumes-from antmediadata --network=host -it --rm antmediaserver
+docker run --volumes-from antmediadata --network=host -it --rm fluential/antmediaserver
 
 # root@antmedia:~/antmedia# docker-compose up -d
 Starting antmediaserver ... done

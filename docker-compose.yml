@@ -5,7 +5,7 @@ services :
   antmediaserver :
     network_mode: host
     container_name : antmediaserver
-    image : "antmediaserver:${ANTMEDIA_VERSION:-latest}"
+    image : "fluential/antmediaserver:${ANTMEDIA_VERSION:-latest}"
     volumes :
       - datastore:/usr/local/antmedia
     restart : always
