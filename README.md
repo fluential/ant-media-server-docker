@@ -20,5 +20,21 @@ Container with built-in data volume
 
 ```
 docker create --name antmediadata
-docker run --volumes-from antmediadata --network=host --privileged=true -it --rm antmediaserver
+docker run --volumes-from antmediadata -p 1935:1935 -p 5080:5080 -p 5443:5443 -p 5554:5554 -p 5000:65000/udp -it --rm antmediaserver
+
+# root@antmedia:~/antmedia# docker-compose up -d
+Starting antmediaserver ... done
+
+# root@antmedia:~/antmedia# docker volume ls
+DRIVER    VOLUME NAME
+local     antmedia_datastore
 ```
+
+## Use
+
+#### Ant Media Server Default Ports
+  - TCP:1935 (RTMP)
+  - TCP:5080 (HTTP)
+  - TCP:5443 (HTTPS)
+  - TCP:5554 (RTSP)
+  - UDP:5000-65000 (WebRTC and RTSP)

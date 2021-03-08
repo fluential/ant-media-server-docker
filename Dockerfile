@@ -1,10 +1,22 @@
+#  Ant Media Server Default Ports
+#
+#    TCP:1935 (RTMP)
+#    TCP:5080 (HTTP)
+#    TCP:5443 (HTTPS)
+#    TCP:5554 (RTSP)
+#    UDP:5000-65000 (WebRTC and RTSP)
+
 FROM ubuntu:18.04
+
+ARG AntMediaServer
 
 # Keep this value ARGs for compatibility
 ARG MongoDBServer=
 ARG MongoDBUsername=
 ARG MongoDBPassword=
 
+ADD run.sh /tmp/run.sh
+RUN chmod 755 /tmp/run.sh
 #Running update and install makes the builder not to use cache which resolves some updates
 RUN apt-get update && apt-get install -y curl libcap2 jq net-tools openjdk-8-jdk
 
@@ -23,6 +35,12 @@ RUN apt-get clean autoclean && apt-get autoremove -y && rm -rf /var/lib/{apt,dpk
 
 VOLUME /usr/local/antmedia
 
+EXPOSE 1935
+EXPOSE 5080
+EXPOSE 5443
+EXPOSE 5554
+EXPOSE 5000:65000/udp
+
 ENTRYPOINT service antmedia restart && bash
 
 # Options
@@ -40,5 +58,4 @@ ENTRYPOINT service antmedia restart && bash
 # -u: MongoDB username
 #
 # -p: MongoDB password
-
-ENTRYPOINT ["/usr/local/antmedia/start.sh"]
+ENTRYPOINT ["/sbin/start-stop-daemon", "--start", "--chuid" ,"antmedia:antmedia", "--exec", "/usr/local/antmedia/start.sh"]

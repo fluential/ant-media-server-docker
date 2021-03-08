@@ -1,11 +1,14 @@
-# By default 5080 is exposed on the host network
 version : '3.4'
 
 services :
   antmediaserver :
-    network_mode: host
     container_name : antmediaserver
     image : "antmediaserver:${ANTMEDIA_VERSION:-latest}"
+    ports:
+      - 1935:1935
+      - 5080:5080
+      - 5443:5443
+      - 5000:65000/udp
     volumes :
       - datastore:/usr/local/antmedia
     restart : always
