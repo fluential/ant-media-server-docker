@@ -1,3 +1,7 @@
+# This docker file can be used in kubernetes. 
+# It accepts all cluster related parameters at run time. 
+# It means it's very easy to add new containers to the cluster 
+
 #  Ant Media Server Default Ports
 #
 #    TCP:1935 (RTMP)
