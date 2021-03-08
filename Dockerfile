@@ -1,7 +1,5 @@
 FROM ubuntu:18.04
 
-ARG AntMediaServer
-
 # Keep this value ARGs for compatibility
 ARG MongoDBServer=
 ARG MongoDBUsername=
