@@ -7,6 +7,7 @@ This aims to build Ant Media Server Docker Image.
 This improves the [original image](https://github.com/ant-media/Ant-Media-Server/wiki/Building-and-Running-Docker-Container-for-Ant-Media-Server)
   - no longer running container in privileged mode
   - no longer running inside as root (using antmedia:antmedia)
+  - Java 11.x
 
 ## Build
 
