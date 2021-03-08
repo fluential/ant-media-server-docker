@@ -8,6 +8,7 @@ This improves the [original image](https://github.com/ant-media/Ant-Media-Server
   - no longer running container in privileged mode
   - no longer running inside as root (using antmedia:antmedia)
   - Java 11.x
+  - SSL Certs with Traefik
 
 ![size](https://badgen.net/docker/size/fluential/antmediaserver) ![starts](https://badgen.net/docker/stars/fluential/antmediaserver?icon=docker&label=stars) ![pulls](https://badgen.net/docker/pulls/fluential/antmediaserver)
 
