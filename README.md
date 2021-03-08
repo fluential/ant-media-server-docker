@@ -10,7 +10,6 @@ This improves the [original image](https://github.com/ant-media/Ant-Media-Server
   - Java 11.x
   - SSL Certs with Traefik
 
-![size](https://badgen.net/docker/size/fluential/antmediaserver) ![starts](https://badgen.net/docker/stars/fluential/antmediaserver?icon=docker&label=stars) ![pulls](https://badgen.net/docker/pulls/fluential/antmediaserver)
 
 ![size](https://badgen.net/docker/size/fluential/antmediaserver) ![starts](https://badgen.net/docker/stars/fluential/antmediaserver?icon=docker&label=stars) ![pulls](https://badgen.net/docker/pulls/fluential/antmediaserver)
 
