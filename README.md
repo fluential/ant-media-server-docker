@@ -8,6 +8,9 @@ This improves the [original image](https://github.com/ant-media/Ant-Media-Server
   - no longer running container in privileged mode
   - no longer running inside as root (using antmedia:antmedia)
   - Java 11.x
+  - SSL Certs with Traefik
+
+![size](https://badgen.net/docker/size/fluential/antmediaserver) ![starts](https://badgen.net/docker/stars/fluential/antmediaserver?icon=docker&label=stars) ![pulls](https://badgen.net/docker/pulls/fluential/antmediaserver)
 
 ![size](https://badgen.net/docker/size/fluential/antmediaserver) ![starts](https://badgen.net/docker/stars/fluential/antmediaserver?icon=docker&label=stars) ![pulls](https://badgen.net/docker/pulls/fluential/antmediaserver)
 
@@ -22,6 +25,10 @@ docker build -t antmediaserver  .
 Container with built-in data volume
 
 ```
+docker-compose up
+```
+
+```
 docker create --name antmediadata
 docker run --volumes-from antmediadata --network=host -it --rm fluential/antmediaserver
 
@@ -32,6 +39,10 @@ Starting antmediaserver ... done
 DRIVER    VOLUME NAME
 local     antmedia_datastore
 ```
+
+### SSL with Traefik
+
+See `docker-compose.traefik.yml`
 
 ## Use
 
