@@ -22,6 +22,10 @@ docker build -t antmediaserver  .
 Container with built-in data volume
 
 ```
+docker-compose up
+```
+
+```
 docker create --name antmediadata
 docker run --volumes-from antmediadata --network=host -it --rm fluential/antmediaserver
 
