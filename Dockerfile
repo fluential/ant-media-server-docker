@@ -31,12 +31,6 @@ RUN apt-get clean autoclean && apt-get autoremove -y && rm -rf /var/lib/{apt,dpk
 
 VOLUME /usr/local/antmedia
 
-EXPOSE 1935
-EXPOSE 5080
-EXPOSE 5443
-EXPOSE 5554
-EXPOSE 5000:65000/udp
-
 ENTRYPOINT service antmedia restart && bash
 
 # Options

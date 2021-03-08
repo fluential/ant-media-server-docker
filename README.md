@@ -20,7 +20,7 @@ Container with built-in data volume
 
 ```
 docker create --name antmediadata
-docker run --volumes-from antmediadata -p 1935:1935 -p 5080:5080 -p 5443:5443 -p 5554:5554 -p 5000:65000/udp -it --rm antmediaserver
+docker run --volumes-from antmediadata --network=host -it --rm antmediaserver
 
 # root@antmedia:~/antmedia# docker-compose up -d
 Starting antmediaserver ... done
