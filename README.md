@@ -2,10 +2,6 @@
 
 > Ant Media Server is a highly Scalable Real-Time Video Streaming Platform - WebRTC Server. Ultra-Low Latency & Adaptive WebRTC Streaming Software.
 
-* https://antmedia.io
-* https://ant-media-docs.readthedocs.io
-* https://github.com/ant-media/Ant-Media-Server/wiki
-
 This aims to build Ant Media Server Docker Image.
 
 ## Build
@@ -38,3 +34,11 @@ local     antmedia_datastore
   - TCP:5443 (HTTPS)
   - TCP:5554 (RTSP)
   - UDP:5000-65000 (WebRTC and RTSP)
+
+
+#### See also
+* https://antmedia.io
+* https://ant-media-docs.readthedocs.io
+* https://github.com/ant-media/Ant-Media-Server/wiki
+
+
