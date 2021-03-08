@@ -37,6 +37,10 @@ DRIVER    VOLUME NAME
 local     antmedia_datastore
 ```
 
+### SSL with Traefik
+
+See `docker-compose.traefik.yml`
+
 ## Use
 
 #### Ant Media Server Default Ports
