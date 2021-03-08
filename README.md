@@ -9,6 +9,8 @@ This improves the [original image](https://github.com/ant-media/Ant-Media-Server
   - no longer running inside as root (using antmedia:antmedia)
   - Java 11.x
 
+![size](//badgen.net/docker/size/fliential/antmediaserver) ![starts](//badgen.net/docker/stars/fluential/antmediaserver?icon=docker&label=stars) ![pulls](//badgen.net/docker/pulls/fluential/antmediaserver)
+
 ## Build
 
 ```
