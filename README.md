@@ -6,6 +6,7 @@ This aims to build Ant Media Server Docker Image.
 
 This improves the [original image](https://github.com/ant-media/Ant-Media-Server/wiki/Building-and-Running-Docker-Container-for-Ant-Media-Server)
   - Persistent Data Volume
+  - Auto pull latest antmedia artifact for easy rebuilds (removed artifact param)
   - No longer running container in privileged mode
   - No longer running inside as root (using antmedia:antmedia)
   - Java 11.x
